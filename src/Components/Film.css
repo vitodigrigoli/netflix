@@ -1,0 +1,22 @@
+.film{
+    display: inline-block;
+    width: 25%;
+    height: 10vw;
+    border: 1px solid yellow;
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top left;
+}
+
+.film__title{
+    position: absolute;
+    bottom: 0.2vw;
+    margin-left: 0.5vw;
+}
+
+.film__title h4{
+    font-weight: 100;
+    font-size: 1vw;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 10px rgba(255,255,255,.5);
+}
