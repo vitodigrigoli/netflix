@@ -22,7 +22,6 @@ function Banner(){
 		<header className="banner" style={{backgroundImage: `url(${baseURL_image}${movie.backdrop_path})`}}>
 			<div className="banner__content">
 				<h1>{movie?.name || movie?.original_name}</h1>
-
 				<div className="banner__buttons">
 					<button className="banner__button">Play</button>
 					<button className="banner__button">My List</button>
