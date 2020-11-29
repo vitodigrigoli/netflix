@@ -1,23 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, useContext} from 'react'
 import axios from '../axios'
 import './Row.css'
 import youtube from "../youtube";
-import YouTube from "react-youtube";
 
-function Row({ title, fetchURL, isLargeRow }){
+function Row({ title, fetchURL, setModal, isLargeRow }){
 
 	const [ movies, setMovies ] = useState([])
-	const [ trailerID, setTrailerID ] = useState('')
 	const baseURL_image = 'https://image.tmdb.org/t/p/w500/'
-	const opts = {
-		height: "390",
-		width: "100%",
-		playerVars: {
-			// https://developers.google.com/youtube/player_parameters
-			autoplay: 1,
-		}
-	}
-	console.log(movies)
+
 	const handleClick = (movie) => {
 		const searchTrailer = `${movie?.name || movie?.title} trailer ufficiale ita`
 		async function fetchTrailer(trailer){
@@ -32,10 +22,15 @@ function Row({ title, fetchURL, isLargeRow }){
 				console.log(r)
 				console.log(searchTrailer)
 				if (r.data.items.length>0){
-					setTrailerID(r.data.items[0].id.videoId)
+					setModal({
+						visibility: true,
+						trailerID: r.data.items[0].id.videoId,
+					})
 				}
+
 			}
 		)
+
 	}
 
 	useEffect( () => {
@@ -62,8 +57,6 @@ function Row({ title, fetchURL, isLargeRow }){
 			}
 
 			</div>
-			{trailerID && <YouTube videoId={trailerID} opts={opts}/>}
-
 		</div>
 	)
 }
