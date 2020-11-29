@@ -27,17 +27,73 @@ function App() {
 			<Row
 				title="NETFLIX ORIGINALS"
 				fetchURL={request.fetchNetflixOriginal}
-				toggleModal={toggleModal}
 				setModal={setModal}
 				isLargeRow
 			/>
 			<Row
 				title="Trending"
 				fetchURL={request.fetchTrending}
+				setModal={setModal}
 			/>
 			<Row
-				title="Action"
+				title="Azione"
 				fetchURL={request.fetchAction}
+				setModal={setModal}
+			/>
+			<Row
+				title="Avventura"
+				fetchURL={request.fetchAdventure}
+				setModal={setModal}
+			/>
+			<Row
+				title="Commedia"
+				fetchURL={request.fetchComedy}
+				setModal={setModal}
+			/>
+			<Row
+				title="Documentari"
+				fetchURL={request.fetchDocumentary}
+				setModal={setModal}
+			/>
+			<Row
+				title="Storia"
+				fetchURL={request.fetchHistory}
+				setModal={setModal}
+			/>
+			<Row
+				title="Scienza"
+				fetchURL={request.fetchScience}
+				setModal={setModal}
+			/>
+			<Row
+				title="Horror"
+				fetchURL={request.fetchHorror}
+				setModal={setModal}
+			/>
+			<Row
+				title="Thriller"
+				fetchURL={request.fetchThriller}
+				setModal={setModal}
+			/>
+			<Row
+				title="Romantico"
+				fetchURL={request.fetchRomance}
+				setModal={setModal}
+			/>
+			<Row
+				title="Fantasy"
+				fetchURL={request.fetchFantasy}
+				setModal={setModal}
+			/>
+			<Row
+				title="Guerra"
+				fetchURL={request.fetchWar}
+				setModal={setModal}
+			/>
+			<Row
+				title="Western"
+				fetchURL={request.fetchWestern}
+				setModal={setModal}
 			/>
 		</div>
 	);
