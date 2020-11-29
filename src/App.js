@@ -71,11 +71,6 @@ function App() {
 				setModal={setModal}
 			/>
 			<Row
-				title="Thriller"
-				fetchURL={request.fetchThriller}
-				setModal={setModal}
-			/>
-			<Row
 				title="Romantico"
 				fetchURL={request.fetchRomance}
 				setModal={setModal}
@@ -83,11 +78,6 @@ function App() {
 			<Row
 				title="Fantasy"
 				fetchURL={request.fetchFantasy}
-				setModal={setModal}
-			/>
-			<Row
-				title="Guerra"
-				fetchURL={request.fetchWar}
 				setModal={setModal}
 			/>
 			<Row
