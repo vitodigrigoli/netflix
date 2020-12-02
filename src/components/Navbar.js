@@ -23,8 +23,13 @@ function Navbar(){
 
 	return(
 		<div className={`navbar ${ show && "navbar--dark"}`}>
-			<img className="navbar__logo" src={logo} alt="logo"/>
-			<img className="navbar__avatar" src={avatar} alt="avatar"/>
+			<div className="navbar__logo">
+				a
+				<img src={logo} alt="logo"/>
+			</div>
+			<div className="navbar__avatar">
+				<img className="navbar__avatar" src={avatar} alt="avatar"/>
+			</div>
 		</div>
 	)
 }

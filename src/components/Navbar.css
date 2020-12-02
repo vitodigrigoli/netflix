@@ -1,21 +1,22 @@
 .navbar{
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 100;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 2vh;
 	transition: 0.4s ease-in-out;
-	max-height: fit-content;
+
 }
 
-.navbar__logo {
+.navbar__logo img {
 	object-fit: contain;
 	width: 150px;
 }
 
-.navbar__avatar {
+.navbar__avatar img {
 	object-fit: contain;
 	width: 50px;
 }
