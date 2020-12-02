@@ -21,7 +21,7 @@ function Modal({trailerID, toggleModal}){
 	return(
 		<div className={`modal`}>
 			<div onClick={handleClick} className="modal__close">
-				<i  className="fas fa-times"/>
+				<i  className="fas fa-times-circle"/>
 			</div>
 			<div className="modal__trailer">
 				<YouTube videoId={trailerID} opts={opts}/>
