@@ -5,6 +5,7 @@ import request from './request'
 import Banner from './components/Banner'
 import Navbar from './components/Navbar'
 import Modal from "./components/Modal";
+import youtube from "./youtube";
 
 function App() {
 
@@ -17,73 +18,97 @@ function App() {
 		trailerID: ''
 	})
 
+	const handleClick = (movie) => {
+		const searchTrailer = `${movie?.name || movie?.title} trailer ufficiale ita`
+		async function fetchTrailer(trailer){
+			return await youtube.get('/search', {
+				params:{
+					q: trailer
+				}
+			})
+		}
+
+		fetchTrailer(searchTrailer).then( r => {
+				console.log(r)
+				console.log(searchTrailer)
+				if (r.data.items.length>0){
+					setModal({
+						visibility: true,
+						trailerID: r.data.items[0].id.videoId,
+					})
+				}
+
+			}
+		)
+	}
+
 
 
 	return (
 		<div className="App">
 			{modal.visibility && <Modal trailerID={modal.trailerID} toggleModal={toggleModal}/>}
 			{!modal.visibility && <Navbar/>}
-			<Banner/>
+			<Banner setModal={setModal} handleClick={handleClick}/>
 			<Row
 				title="NETFLIX ORIGINALS"
 				fetchURL={request.fetchNetflixOriginal}
-				setModal={setModal}
+				handleClick={handleClick}
 				isLargeRow
 			/>
 			<Row
-				title="Trending"
+				title="In Tendenza"
 				fetchURL={request.fetchTrending}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Azione"
 				fetchURL={request.fetchAction}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Avventura"
 				fetchURL={request.fetchAdventure}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Commedia"
 				fetchURL={request.fetchComedy}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Documentari"
 				fetchURL={request.fetchDocumentary}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Storia"
 				fetchURL={request.fetchHistory}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Scienza"
 				fetchURL={request.fetchScience}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Horror"
 				fetchURL={request.fetchHorror}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
-				title="Romantico"
+				title="Romanzi"
 				fetchURL={request.fetchRomance}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Fantasy"
 				fetchURL={request.fetchFantasy}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 			<Row
 				title="Western"
 				fetchURL={request.fetchWestern}
-				setModal={setModal}
+				handleClick={handleClick}
 			/>
 		</div>
 	);

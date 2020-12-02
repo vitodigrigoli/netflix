@@ -5,7 +5,6 @@ import './Modal.css'
 function Modal({trailerID, toggleModal}){
 
 	const handleClick = () => {
-		console.log('toggle')
 		toggleModal()
 	}
 

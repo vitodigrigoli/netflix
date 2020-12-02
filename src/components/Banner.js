@@ -3,9 +3,11 @@ import axios from '../axios'
 import request from "../request";
 import './Banner.css'
 
-function Banner(){
+function Banner({handleClick}){
 	const [movie, setMovie] = useState([])
 	const baseURL_image = 'https://image.tmdb.org/t/p/original'
+
+
 
 	useEffect( () =>{
 		async function fetchData(){
@@ -31,7 +33,7 @@ function Banner(){
 			<div className="banner__content">
 				<h1>{movie?.name || movie?.original_name}</h1>
 				<div className="banner__buttons">
-					<button className="banner__button">Play</button>
+					<button className="banner__button" onClick={() => handleClick(movie)}>Play</button>
 					<button className="banner__button">My List</button>
 				</div>
 

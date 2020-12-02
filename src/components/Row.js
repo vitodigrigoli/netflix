@@ -1,37 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import axios from '../axios'
 import './Row.css'
-import youtube from "../youtube";
 
-function Row({ title, fetchURL, setModal, isLargeRow }){
+function Row({ title, fetchURL, handleClick, isLargeRow }){
 
 	const [ movies, setMovies ] = useState([])
 	const baseURL_image = 'https://image.tmdb.org/t/p/w500/'
 
-	const handleClick = (movie) => {
-		const searchTrailer = `${movie?.name || movie?.title} trailer ufficiale ita`
-		async function fetchTrailer(trailer){
-			return await youtube.get('/search', {
-				params:{
-					q: trailer
-				}
-			})
-		}
-
-		fetchTrailer(searchTrailer).then( r => {
-				console.log(r)
-				console.log(searchTrailer)
-				if (r.data.items.length>0){
-					setModal({
-						visibility: true,
-						trailerID: r.data.items[0].id.videoId,
-					})
-				}
-
-			}
-		)
-
-	}
 
 	useEffect( () => {
 		async function fetchData(){
