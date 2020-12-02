@@ -6,15 +6,15 @@
 	height: 100vh;
 	z-index: 100;
 	background-color: var(--black);
-	opacity: 1;
+	opacity: 0.98;
 }
 
 .modal__close{
 	position: absolute;
-	width: fit-content;
 	top:0;
 	right: 0;
 	padding: 10px;
+	border: 1px solid red;
 }
 
 .modal__close i{
