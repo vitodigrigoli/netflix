@@ -14,8 +14,16 @@ function Banner(){
 
 		fetchData().then( result => {
 			const random = Math.floor( Math.random() * result.data.results.length )
+
+			// slice if overview is too big
+			if( String(result.data.results[random].overview).length > 300 ){
+				result.data.results[random].overview = String(result.data.results[random].overview).slice(0, 300) + '...'
+			}
 			setMovie( result.data.results[random] )
+
 		})
+
+
 	}, [])
 
 	return(

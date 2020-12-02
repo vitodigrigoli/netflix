@@ -24,7 +24,6 @@ function Navbar(){
 	return(
 		<div className={`navbar ${ show && "navbar--dark"}`}>
 			<div className="navbar__logo">
-				a
 				<img src={logo} alt="logo"/>
 			</div>
 			<div className="navbar__avatar">
