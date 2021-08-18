@@ -61,16 +61,6 @@ function App() {
 				handleClick={handleClick}
 			/>
 			<Row
-				title="Azione"
-				fetchURL={request.fetchAction}
-				handleClick={handleClick}
-			/>
-			<Row
-				title="Avventura"
-				fetchURL={request.fetchAdventure}
-				handleClick={handleClick}
-			/>
-			<Row
 				title="Commedia"
 				fetchURL={request.fetchComedy}
 				handleClick={handleClick}
@@ -86,23 +76,8 @@ function App() {
 				handleClick={handleClick}
 			/>
 			<Row
-				title="Scienza"
-				fetchURL={request.fetchScience}
-				handleClick={handleClick}
-			/>
-			<Row
-				title="Horror"
-				fetchURL={request.fetchHorror}
-				handleClick={handleClick}
-			/>
-			<Row
 				title="Romanzi"
 				fetchURL={request.fetchRomance}
-				handleClick={handleClick}
-			/>
-			<Row
-				title="Fantasy"
-				fetchURL={request.fetchFantasy}
 				handleClick={handleClick}
 			/>
 			<Row
